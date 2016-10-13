@@ -9,33 +9,33 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
-var platform_browser_1 = require('@angular/platform-browser');
-var app_routing_1 = require('./app.routing');
-var app_component_1 = require('./app.component');
-var home_component_1 = require('./home/home.component');
-var contact_component_1 = require('./contact/contact.component');
-var not_found_component_1 = require('./not-found/not-found.component');
-var AppModule = (function () {
-    function AppModule() {
+var common_1 = require('@angular/common');
+var about_component_1 = require('./about.component');
+var about_user_component_1 = require('./about-user.component');
+var about_section_component_1 = require('./about-section.component');
+var user_service_1 = require('../shared/services/user.service');
+var about_routing_1 = require('./about.routing');
+var AboutModule = (function () {
+    function AboutModule() {
     }
-    AppModule = __decorate([
+    AboutModule = __decorate([
         core_1.NgModule({
             imports: [
-                platform_browser_1.BrowserModule,
-                app_routing_1.appRouting
+                about_routing_1.aboutRouting,
+                common_1.CommonModule
             ],
             declarations: [
-                app_component_1.AppComponent,
-                home_component_1.HomeComponent,
-                contact_component_1.ContactComponent,
-                not_found_component_1.NotFoundComponent
+                about_component_1.AboutComponent,
+                about_user_component_1.AboutUserComponent,
+                about_section_component_1.AboutSectionComponent
             ],
-            providers: [],
-            bootstrap: [app_component_1.AppComponent]
+            providers: [
+                user_service_1.UserService
+            ]
         }), 
         __metadata('design:paramtypes', [])
-    ], AppModule);
-    return AppModule;
+    ], AboutModule);
+    return AboutModule;
 }());
-exports.AppModule = AppModule;
-//# sourceMappingURL=app.module.js.map
+exports.AboutModule = AboutModule;
+//# sourceMappingURL=about.module.js.map
